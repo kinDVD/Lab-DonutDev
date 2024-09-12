@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    @for(d of donutResult.results; track $index){
+    <div class="col">
+      <div class="card">
+        <div class="card body">
+          <img id="Photo" src="{{ d.photo }}" />
+          <p id="PhotoName">{{ d.name }}</p>
+        </div>
+        <div class="card subtitle">
+          <a id="sourceCaption" href="{{ d.photo_attribution }}"
+            >Photo Source</a
+          >
+        </div>
+      </div>
+
+      <div class="w-100"></div>
+    </div>
+    }
+  </div>
+</div>
