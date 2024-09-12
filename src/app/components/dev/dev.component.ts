@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
-import { FamousPeopleComponent } from '../famous-people/famous-people.component';
-import { Complete } from '../../models/dev';
+import { DevModel } from '../../models/dev';
 import { DevService } from '../../services/dev.service';
+import { DevRowComponent } from '../dev-row/dev-row.component';
 
 @Component({
   selector: 'app-dev',
   standalone: true,
-  imports: [FamousPeopleComponent],
+  imports: [DevRowComponent],
   templateUrl: './dev.component.html',
   styleUrl: './dev.component.css'
 })
 export class DevComponent {
-  DevResult:Complete = {} as Complete;
-  constructor(private DevService : DevService){}
+  DevResult:DevModel = {} as DevModel;
+  constructor(private devService : DevService){}
+  
   ngOnInit(){
     this.callApi();
   }
   
-  
   callApi(){
-    this.DevService.getDev().subscribe((response: Complete) => {
+    this.devService.getDev().subscribe((response: DevModel) => {
       console.log(response);
       this.DevResult = response;
     });

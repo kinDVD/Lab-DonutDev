@@ -1,1 +1,19 @@
-<p>dev works!</p>
+<h2>Devs</h2>
+
+<table class="table">
+    <thead>
+    <tr class="table-primary">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Innovation</th>
+        <th>Year</th>
+    </tr>
+</thead>
+<tbody>
+    @for(d of DevResult.complete; track $index){
+        
+       <tr [class.table-secondary]="$index % 2 == 0" app-dev-row [DisplayDev]="d"></tr>
+    
+    }
+</tbody>
+</table>

@@ -1,11 +1,12 @@
 <div class="container">
+  <h2>Donuts</h2>
   <div class="row">
     @for(d of donutResult.results; track $index){
     <div class="col">
       <div class="card">
         <div class="card body">
           <img id="Photo" src="{{ d.photo }}" />
-          <p id="PhotoName">{{ d.name }}</p>
+          <h3 id="PhotoName">{{ d.name }}</h3>
         </div>
         <div class="card subtitle">
           <a id="sourceCaption" href="{{ d.photo_attribution }}"
